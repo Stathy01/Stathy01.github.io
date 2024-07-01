@@ -58,6 +58,8 @@
         }
         .correct { color: green; }
         .incorrect { color: red; }
+        .correct-btn { background-color: green !important; }
+        .incorrect-btn { background-color: red !important; }
     </style>
 </head>
 <body>
@@ -67,6 +69,8 @@
             <p id="tense">Tense: </p>
             <p id="person">Person: </p>
             <p id="score">Correct Answers: 0</p>
+            <p id="incorrect">Incorrect Answers: 0</p>
+            <p id="percentage">Percentage Correct: 0%</p>
         </div>
         <div class="options" id="options"></div>
         <div class="feedback" id="feedback"></div>
@@ -86,7 +90,7 @@
                         "2nd Plural": "είστε", 
                         "3rd Plural": "είναι" 
                     }, 
-                    past: { 
+                    aorist: { 
                         "1st Singular": "ήμουν", 
                         "2nd Singular": "ήσουν", 
                         "3rd Singular": "ήταν", 
@@ -101,7 +105,19 @@
                         "1st Plural": "θα είμαστε", 
                         "2nd Plural": "θα είστε", 
                         "3rd Plural": "θα είναι" 
-                    } 
+                    },
+                    imperfect: { 
+                        "1st Singular": "ήμουν", 
+                        "2nd Singular": "ήσουν", 
+                        "3rd Singular": "ήταν", 
+                        "1st Plural": "ήμασταν", 
+                        "2nd Plural": "ήσασταν", 
+                        "3rd Plural": "ήταν" 
+                    },
+                    imperative: { 
+                        "2nd Singular": "είσαι", 
+                        "2nd Plural": "είστε" 
+                    }
                 } 
             },
             { 
@@ -115,7 +131,7 @@
                         "2nd Plural": "λέτε", 
                         "3rd Plural": "λένε" 
                     }, 
-                    past: { 
+                    aorist: { 
                         "1st Singular": "είπα", 
                         "2nd Singular": "είπες", 
                         "3rd Singular": "είπε", 
@@ -130,7 +146,19 @@
                         "1st Plural": "θα πούμε", 
                         "2nd Plural": "θα πείτε", 
                         "3rd Plural": "θα πουν" 
-                    } 
+                    },
+                    imperfect: { 
+                        "1st Singular": "έλεγα", 
+                        "2nd Singular": "έλεγες", 
+                        "3rd Singular": "έλεγε", 
+                        "1st Plural": "λέγαμε", 
+                        "2nd Plural": "λέγατε", 
+                        "3rd Plural": "έλεγαν" 
+                    },
+                    imperative: { 
+                        "2nd Singular": "πες", 
+                        "2nd Plural": "πείτε" 
+                    }
                 } 
             },
             { 
@@ -144,7 +172,7 @@
                         "2nd Plural": "πηγαίνετε", 
                         "3rd Plural": "πηγαίνουν" 
                     }, 
-                    past: { 
+                    aorist: { 
                         "1st Singular": "πήγα", 
                         "2nd Singular": "πήγες", 
                         "3rd Singular": "πήγε", 
@@ -159,7 +187,19 @@
                         "1st Plural": "θα πάμε", 
                         "2nd Plural": "θα πάτε", 
                         "3rd Plural": "θα πάνε" 
-                    } 
+                    },
+                    imperfect: { 
+                        "1st Singular": "πήγαινα", 
+                        "2nd Singular": "πήγαινες", 
+                        "3rd Singular": "πήγαινε", 
+                        "1st Plural": "πηγαίναμε", 
+                        "2nd Plural": "πηγαίνατε", 
+                        "3rd Plural": "πήγαιναν" 
+                    },
+                    imperative: { 
+                        "2nd Singular": "πήγαινε", 
+                        "2nd Plural": "πηγαίνετε" 
+                    }
                 } 
             },
             { 
@@ -173,7 +213,7 @@
                         "2nd Plural": "κάνετε", 
                         "3rd Plural": "κάνουν" 
                     }, 
-                    past: { 
+                    aorist: { 
                         "1st Singular": "έκανα", 
                         "2nd Singular": "έκανες", 
                         "3rd Singular": "έκανε", 
@@ -188,7 +228,19 @@
                         "1st Plural": "θα κάνουμε", 
                         "2nd Plural": "θα κάνετε", 
                         "3rd Plural": "θα κάνουν" 
-                    } 
+                    },
+                    imperfect: { 
+                        "1st Singular": "έκανα", 
+                        "2nd Singular": "έκανες", 
+                        "3rd Singular": "έκανε", 
+                        "1st Plural": "κάναμε", 
+                        "2nd Plural": "κάνατε", 
+                        "3rd Plural": "έκαναν" 
+                    },
+                    imperative: { 
+                        "2nd Singular": "κάνε", 
+                        "2nd Plural": "κάνετε" 
+                    }
                 } 
             },
             { 
@@ -202,7 +254,7 @@
                         "2nd Plural": "γράφετε", 
                         "3rd Plural": "γράφουν" 
                     }, 
-                    past: { 
+                    aorist: { 
                         "1st Singular": "έγραψα", 
                         "2nd Singular": "έγραψες", 
                         "3rd Singular": "έγραψε", 
@@ -217,7 +269,19 @@
                         "1st Plural": "θα γράψουμε", 
                         "2nd Plural": "θα γράψετε", 
                         "3rd Plural": "θα γράψουν" 
-                    } 
+                    },
+                    imperfect: { 
+                        "1st Singular": "έγραφα", 
+                        "2nd Singular": "έγραφες", 
+                        "3rd Singular": "έγραφε", 
+                        "1st Plural": "γράφαμε", 
+                        "2nd Plural": "γράφατε", 
+                        "3rd Plural": "έγραφαν" 
+                    },
+                    imperative: { 
+                        "2nd Singular": "γράψε", 
+                        "2nd Plural": "γράψτε" 
+                    }
                 } 
             },
             { 
@@ -231,7 +295,7 @@
                         "2nd Plural": "δίνετε", 
                         "3rd Plural": "δίνουν" 
                     }, 
-                    past: { 
+                    aorist: { 
                         "1st Singular": "έδωσα", 
                         "2nd Singular": "έδωσες", 
                         "3rd Singular": "έδωσε", 
@@ -246,12 +310,25 @@
                         "1st Plural": "θα δώσουμε", 
                         "2nd Plural": "θα δώσετε", 
                         "3rd Plural": "θα δώσουν" 
-                    } 
+                    },
+                    imperfect: { 
+                        "1st Singular": "έδινα", 
+                        "2nd Singular": "έδινες", 
+                        "3rd Singular": "έδινε", 
+                        "1st Plural": "δίναμε", 
+                        "2nd Plural": "δίνατε", 
+                        "3rd Plural": "έδιναν" 
+                    },
+                    imperative: { 
+                        "2nd Singular": "δώσε", 
+                        "2nd Plural": "δώστε" 
+                    }
                 } 
             }
         ];
 
-        let score = 0;
+        let correctCount = 0;
+        let incorrectCount = 0;
         let currentVerb;
         let currentTense;
         let currentPerson;
@@ -270,10 +347,13 @@
             document.getElementById('verb').textContent = `Verb: ${currentVerb.infinitive}`;
             document.getElementById('tense').textContent = `Tense: ${currentTense}`;
             document.getElementById('person').textContent = `Person: ${currentPerson}`;
-            document.getElementById('score').textContent = `Correct Answers: ${score}`;
+            document.getElementById('score').textContent = `Correct Answers: ${correctCount}`;
+            document.getElementById('incorrect').textContent = `Incorrect Answers: ${incorrectCount}`;
+            document.getElementById('percentage').textContent = `Percentage Correct: ${calculatePercentage(correctCount, incorrectCount)}%`;
             document.getElementById('feedback').textContent = ''; // Reset feedback text
 
             generateOptions();
+            resetButtonColors();
         }
 
         function generateOptions() {
@@ -294,24 +374,41 @@
                 const button = document.createElement('button');
                 button.classList.add('option');
                 button.textContent = option;
-                button.onclick = () => checkAnswer(option);
+                button.onclick = () => checkAnswer(button, option);
                 optionsContainer.appendChild(button);
             });
         }
 
-        function checkAnswer(answer) {
+        function checkAnswer(button, answer) {
             const feedback = document.getElementById('feedback');
             if (answer === correctAnswer) {
-                score++;
+                correctCount++;
                 feedback.textContent = 'Correct!';
                 feedback.classList.add('correct');
                 feedback.classList.remove('incorrect');
+                button.classList.add('correct-btn');
             } else {
+                incorrectCount++;
                 feedback.textContent = 'Incorrect!';
                 feedback.classList.add('incorrect');
                 feedback.classList.remove('correct');
+                button.classList.add('incorrect-btn');
             }
-            document.getElementById('score').textContent = `Correct Answers: ${score}`;
+            document.getElementById('score').textContent = `Correct Answers: ${correctCount}`;
+            document.getElementById('incorrect').textContent = `Incorrect Answers: ${incorrectCount}`;
+            document.getElementById('percentage').textContent = `Percentage Correct: ${calculatePercentage(correctCount, incorrectCount)}%`;
+        }
+
+        function resetButtonColors() {
+            const buttons = document.querySelectorAll('.option');
+            buttons.forEach(button => {
+                button.classList.remove('correct-btn', 'incorrect-btn');
+            });
+        }
+
+        function calculatePercentage(correct, incorrect) {
+            const total = correct + incorrect;
+            return total === 0 ? 0 : ((correct / total) * 100).toFixed(2);
         }
 
         generateNewQuestion();
