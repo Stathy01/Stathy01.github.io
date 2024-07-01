@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Greek Conjugation Practice</title>
+    <title>Modern Greek Conjugation Practice</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -75,453 +75,225 @@
 
     <script>
         const greekVerbs = [
-    { 
-        infinitive: "εἰμί (to be)", 
-        conjugations: { 
-            present: { 
-                "1st Singular": "εἰμί", 
-                "2nd Singular": "εἶ", 
-                "3rd Singular": "ἐστί(ν)", 
-                "1st Plural": "ἐσμέν", 
-                "2nd Plural": "ἐστέ", 
-                "3rd Plural": "εἰσί(ν)" 
-            }, 
-            imperfect: { 
-                "1st Singular": "ἦν", 
-                "2nd Singular": "ἦσθα", 
-                "3rd Singular": "ἦν", 
-                "1st Plural": "ἦμεν", 
-                "2nd Plural": "ἦτε", 
-                "3rd Plural": "ἦσαν" 
-            }, 
-            aorist: { 
-                "1st Singular": "-", 
-                "2nd Singular": "-", 
-                "3rd Singular": "-", 
-                "1st Plural": "-", 
-                "2nd Plural": "-", 
-                "3rd Plural": "-" 
-            }, 
-            futureSimple: { 
-                "1st Singular": "ἔσομαι", 
-                "2nd Singular": "ἔσῃ/ἔσει", 
-                "3rd Singular": "ἔσται", 
-                "1st Plural": "ἐσόμεθα", 
-                "2nd Plural": "ἔσεσθε", 
-                "3rd Plural": "ἔσονται" 
-            }, 
-            imperative: { 
-                "2nd Singular": "ἴσθι", 
-                "3rd Singular": "ἔστω", 
-                "2nd Plural": "ἔστε", 
-                "3rd Plural": "ἔστων" 
-            } 
-        } 
-    },
-    { 
-        infinitive: "λέγω (to say)", 
-        conjugations: { 
-            present: { 
-                "1st Singular": "λέγω", 
-                "2nd Singular": "λέγεις", 
-                "3rd Singular": "λέγει", 
-                "1st Plural": "λέγομεν", 
-                "2nd Plural": "λέγετε", 
-                "3rd Plural": "λέγουσι(ν)" 
-            }, 
-            imperfect: { 
-                "1st Singular": "ἔλεγον", 
-                "2nd Singular": "ἔλεγες", 
-                "3rd Singular": "ἔλεγε(ν)", 
-                "1st Plural": "ἐλέγομεν", 
-                "2nd Plural": "ἐλέγετε", 
-                "3rd Plural": "ἔλεγον" 
-            }, 
-            aorist: { 
-                "1st Singular": "εἶπον", 
-                "2nd Singular": "εἶπες", 
-                "3rd Singular": "εἶπε(ν)", 
-                "1st Plural": "εἴπομεν", 
-                "2nd Plural": "εἴπετε", 
-                "3rd Plural": "εἶπον" 
-            }, 
-            futureSimple: { 
-                "1st Singular": "ἐρῶ", 
-                "2nd Singular": "ἐρεῖς", 
-                "3rd Singular": "ἐρεῖ", 
-                "1st Plural": "ἐροῦμεν", 
-                "2nd Plural": "ἐρεῖτε", 
-                "3rd Plural": "ἐροῦσι(ν)" 
-            }, 
-            imperative: { 
-                "2nd Singular": "λέγε", 
-                "3rd Singular": "λεγέτω", 
-                "2nd Plural": "λέγετε", 
-                "3rd Plural": "λεγόντων" 
-            } 
-        } 
-    },
-    { 
-        infinitive: "ἔρχομαι (to come/go)", 
-        conjugations: { 
-            present: { 
-                "1st Singular": "ἔρχομαι", 
-                "2nd Singular": "ἔρχῃ/ἔρχει", 
-                "3rd Singular": "ἔρχεται", 
-                "1st Plural": "ἐρχόμεθα", 
-                "2nd Plural": "ἔρχεσθε", 
-                "3rd Plural": "ἔρχονται" 
-            }, 
-            imperfect: { 
-                "1st Singular": "ἠρχόμην", 
-                "2nd Singular": "ἤρχου", 
-                "3rd Singular": "ἤρχετο", 
-                "1st Plural": "ἠρχόμεθα", 
-                "2nd Plural": "ἤρχεσθε", 
-                "3rd Plural": "ἤρχοντο" 
-            }, 
-            aorist: { 
-                "1st Singular": "ἦλθον", 
-                "2nd Singular": "ἦλθες", 
-                "3rd Singular": "ἦλθε(ν)", 
-                "1st Plural": "ἤλθομεν", 
-                "2nd Plural": "ἤλθετε", 
-                "3rd Plural": "ἦλθον" 
-            }, 
-            futureSimple: { 
-                "1st Singular": "ἐλεύσομαι", 
-                "2nd Singular": "ἐλεύσῃ/ἐλεύσει", 
-                "3rd Singular": "ἐλεύσεται", 
-                "1st Plural": "ἐλευσόμεθα", 
-                "2nd Plural": "ἐλεύσεσθε", 
-                "3rd Plural": "ἐλεύσονται" 
-            }, 
-            imperative: { 
-                "2nd Singular": "ἔρχου", 
-                "3rd Singular": "ἐρχέσθω", 
-                "2nd Plural": "ἔρχεσθε", 
-                "3rd Plural": "ἐρχέσθων" 
-            } 
-        } 
-    },
-    {
-    infinitive: "ποιέω (to make, do)",
-    conjugations: {
-        present: {
-            "1st Singular": "ποιῶ",
-            "2nd Singular": "ποιεῖς",
-            "3rd Singular": "ποιεῖ",
-            "1st Plural": "ποιοῦμεν",
-            "2nd Plural": "ποιεῖτε",
-            "3rd Plural": "ποιοῦσι(ν)"
-        },
-        imperfect: {
-            "1st Singular": "ἐποίουν",
-            "2nd Singular": "ἐποίεις",
-            "3rd Singular": "ἐποίει",
-            "1st Plural": "ἐποιοῦμεν",
-            "2nd Plural": "ἐποιεῖτε",
-            "3rd Plural": "ἐποίουν"
-        },
-        aorist: {
-            "1st Singular": "ἐποίησα",
-            "2nd Singular": "ἐποίησας",
-            "3rd Singular": "ἐποίησε(ν)",
-            "1st Plural": "ἐποιήσαμεν",
-            "2nd Plural": "ἐποιήσατε",
-            "3rd Plural": "ἐποίησαν"
-        },
-        futureSimple: {
-            "1st Singular": "ποιήσω",
-            "2nd Singular": "ποιήσεις",
-            "3rd Singular": "ποιήσει",
-            "1st Plural": "ποιήσομεν",
-            "2nd Plural": "ποιήσετε",
-            "3rd Plural": "ποιήσουσι(ν)"
-        },
-        imperative: {
-            "2nd Singular": "ποίει",
-            "3rd Singular": "ποιείτω",
-            "2nd Plural": "ποιεῖτε",
-            "3rd Plural": "ποιούντων"
-        }
-    }
-},
-{
-    infinitive: "γράφω (to write)",
-    conjugations: {
-        present: {
-            "1st Singular": "γράφω",
-            "2nd Singular": "γράφεις",
-            "3rd Singular": "γράφει",
-            "1st Plural": "γράφομεν",
-            "2nd Plural": "γράφετε",
-            "3rd Plural": "γράφουσι(ν)"
-        },
-        imperfect: {
-            "1st Singular": "ἔγραφον",
-            "2nd Singular": "ἔγραφες",
-            "3rd Singular": "ἔγραφε(ν)",
-            "1st Plural": "ἐγράφομεν",
-            "2nd Plural": "ἐγράφετε",
-            "3rd Plural": "ἔγραφον"
-        },
-        aorist: {
-            "1st Singular": "ἔγραψα",
-            "2nd Singular": "ἔγραψας",
-            "3rd Singular": "ἔγραψε(ν)",
-            "1st Plural": "ἐγράψαμεν",
-            "2nd Plural": "ἐγράψατε",
-            "3rd Plural": "ἔγραψαν"
-        },
-        futureSimple: {
-            "1st Singular": "γράψω",
-            "2nd Singular": "γράψεις",
-            "3rd Singular": "γράψει",
-            "1st Plural": "γράψομεν",
-            "2nd Plural": "γράψετε",
-            "3rd Plural": "γράψουσι(ν)"
-        },
-        imperative: {
-            "2nd Singular": "γράφε",
-            "3rd Singular": "γραφέτω",
-            "2nd Plural": "γράφετε",
-            "3rd Plural": "γραφόντων"
-        }
-    }
-},
-{
-    infinitive: "δίδωμι (to give)",
-    conjugations: {
-        present: {
-            "1st Singular": "δίδωμι",
-            "2nd Singular": "δίδως",
-            "3rd Singular": "δίδωσι(ν)",
-            "1st Plural": "δίδομεν",
-            "2nd Plural": "δίδοτε",
-            "3rd Plural": "διδόασι(ν)"
-        },
-        imperfect: {
-            "1st Singular": "ἐδίδουν",
-            "2nd Singular": "ἐδίδους",
-            "3rd Singular": "ἐδίδου",
-            "1st Plural": "ἐδίδομεν",
-            "2nd Plural": "ἐδίδοτε",
-            "3rd Plural": "ἐδίδοσαν"
-        },
-        aorist: {
-            "1st Singular": "ἔδωκα",
-            "2nd Singular": "ἔδωκας",
-            "3rd Singular": "ἔδωκε(ν)",
-            "1st Plural": "ἔδομεν",
-            "2nd Plural": "ἔδοτε",
-            "3rd Plural": "ἔδοσαν"
-        },
-        futureSimple: {
-            "1st Singular": "δώσω",
-            "2nd Singular": "δώσεις",
-            "3rd Singular": "δώσει",
-            "1st Plural": "δώσομεν",
-            "2nd Plural": "δώσετε",
-            "3rd Plural": "δώσουσι(ν)"
-        },
-        imperative: {
-            "2nd Singular": "δίδου",
-            "3rd Singular": "διδότω",
-            "2nd Plural": "δίδοτε",
-            "3rd Plural": "διδόντων"
-        }
-    }
-},
-{
-    infinitive: "λαμβάνω (to take)",
-    conjugations: {
-        present: {
-            "1st Singular": "λαμβάνω",
-            "2nd Singular": "λαμβάνεις",
-            "3rd Singular": "λαμβάνει",
-            "1st Plural": "λαμβάνομεν",
-            "2nd Plural": "λαμβάνετε",
-            "3rd Plural": "λαμβάνουσι(ν)"
-        },
-        imperfect: {
-            "1st Singular": "ἐλάμβανον",
-            "2nd Singular": "ἐλάμβανες",
-            "3rd Singular": "ἐλάμβανε(ν)",
-            "1st Plural": "ἐλαμβάνομεν",
-            "2nd Plural": "ἐλαμβάνετε",
-            "3rd Plural": "ἐλάμβανον"
-        },
-        aorist: {
-            "1st Singular": "ἔλαβον",
-            "2nd Singular": "ἔλαβες",
-            "3rd Singular": "ἔλαβε(ν)",
-            "1st Plural": "ἐλάβομεν",
-            "2nd Plural": "ἐλάβετε",
-            "3rd Plural": "ἔλαβον"
-        },
-        futureSimple: {
-            "1st Singular": "λήψομαι",
-            "2nd Singular": "λήψῃ/λήψει",
-            "3rd Singular": "λήψεται",
-            "1st Plural": "ληψόμεθα",
-            "2nd Plural": "λήψεσθε",
-            "3rd Plural": "λήψονται"
-        },
-        imperative: {
-            "2nd Singular": "λάμβανε",
-            "3rd Singular": "λαμβανέτω",
-            "2nd Plural": "λαμβάνετε",
-            "3rd Plural": "λαμβανόντων"
-        }
-    }
-},
-{
-    infinitive: "βάλλω (to throw)",
-    conjugations: {
-        present: {
-            "1st Singular": "βάλλω",
-            "2nd Singular": "βάλλεις",
-            "3rd Singular": "βάλλει",
-            "1st Plural": "βάλλομεν",
-            "2nd Plural": "βάλλετε",
-            "3rd Plural": "βάλλουσι(ν)"
-        },
-        imperfect: {
-            "1st Singular": "ἔβαλλον",
-            "2nd Singular": "ἔβαλλες",
-            "3rd Singular": "ἔβαλλε(ν)",
-            "1st Plural": "ἐβάλλομεν",
-            "2nd Plural": "ἐβάλλετε",
-            "3rd Plural": "ἔβαλλον"
-        },
-        aorist: {
-            "1st Singular": "ἔβαλον",
-            "2nd Singular": "ἔβαλες",
-            "3rd Singular": "ἔβαλε(ν)",
-            "1st Plural": "ἐβάλομεν",
-            "2nd Plural": "ἐβάλετε",
-            "3rd Plural": "ἔβαλον"
-        },
-        futureSimple: {
-            "1st Singular": "βαλῶ",
-            "2nd Singular": "βαλεῖς",
-            "3rd Singular": "βαλεῖ",
-            "1st Plural": "βαλοῦμεν",
-            "2nd Plural": "βαλεῖτε",
-            "3rd Plural": "βαλοῦσι(ν)"
-        },
-        imperative: {
-            "2nd Singular": "βάλλε",
-            "3rd Singular": "βαλλέτω",
-            "2nd Plural": "βάλλετε",
-            "3rd Plural": "βαλλόντων"
-        }
-    }
-},
-{
-    infinitive: "ἀκούω (to hear)",
-    conjugations: {
-        present: {
-            "1st Singular": "ἀκούω",
-            "2nd Singular": "ἀκούεις",
-            "3rd Singular": "ἀκούει",
-            "1st Plural": "ἀκούομεν",
-            "2nd Plural": "ἀκούετε",
-            "3rd Plural": "ἀκούουσι(ν)"
-        },
-        imperfect: {
-            "1st Singular": "ἤκουον",
-            "2nd Singular": "ἤκουες",
-            "3rd Singular": "ἤκουε(ν)",
-            "1st Plural": "ἠκούομεν",
-            "2nd Plural": "ἠκούετε",
-            "3rd Plural": "ἤκουον"
-        },
-        aorist: {
-            "1st Singular": "ἤκουσα",
-            "2nd Singular": "ἤκουσας",
-            "3rd Singular": "ἤκουσε(ν)",
-            "1st Plural": "ἠκούσαμεν",
-            "2nd Plural": "ἠκούσατε",
-            "3rd Plural": "ἤκουσαν"
-        },
-        futureSimple: {
-            "1st Singular": "ἀκούσομαι",
-            "2nd Singular": "ἀκούσῃ/ἀκούσει",
-            "3rd Singular": "ἀκούσεται",
-            "1st Plural": "ἀκουσόμεθα",
-            "2nd Plural": "ἀκούσεσθε",
-            "3rd Plural": "ἀκούσονται"
-        },
-        imperative: {
-            "2nd Singular": "ἄκουε",
-            "3rd Singular": "ἀκουέτω",
-            "2nd Plural": "ἀκούετε",
-            "3rd Plural": "ἀκουόντων"
-        }
-    }
-}
-];  
+            { 
+                infinitive: "είμαι (to be)", 
+                conjugations: { 
+                    present: { 
+                        "1st Singular": "είμαι", 
+                        "2nd Singular": "είσαι", 
+                        "3rd Singular": "είναι", 
+                        "1st Plural": "είμαστε", 
+                        "2nd Plural": "είστε", 
+                        "3rd Plural": "είναι" 
+                    }, 
+                    past: { 
+                        "1st Singular": "ήμουν", 
+                        "2nd Singular": "ήσουν", 
+                        "3rd Singular": "ήταν", 
+                        "1st Plural": "ήμασταν", 
+                        "2nd Plural": "ήσασταν", 
+                        "3rd Plural": "ήταν" 
+                    }, 
+                    future: { 
+                        "1st Singular": "θα είμαι", 
+                        "2nd Singular": "θα είσαι", 
+                        "3rd Singular": "θα είναι", 
+                        "1st Plural": "θα είμαστε", 
+                        "2nd Plural": "θα είστε", 
+                        "3rd Plural": "θα είναι" 
+                    } 
+                } 
+            },
+            { 
+                infinitive: "λέω (to say)", 
+                conjugations: { 
+                    present: { 
+                        "1st Singular": "λέω", 
+                        "2nd Singular": "λες", 
+                        "3rd Singular": "λέει", 
+                        "1st Plural": "λέμε", 
+                        "2nd Plural": "λέτε", 
+                        "3rd Plural": "λένε" 
+                    }, 
+                    past: { 
+                        "1st Singular": "είπα", 
+                        "2nd Singular": "είπες", 
+                        "3rd Singular": "είπε", 
+                        "1st Plural": "είπαμε", 
+                        "2nd Plural": "είπατε", 
+                        "3rd Plural": "είπαν" 
+                    }, 
+                    future: { 
+                        "1st Singular": "θα πω", 
+                        "2nd Singular": "θα πεις", 
+                        "3rd Singular": "θα πει", 
+                        "1st Plural": "θα πούμε", 
+                        "2nd Plural": "θα πείτε", 
+                        "3rd Plural": "θα πουν" 
+                    } 
+                } 
+            },
+            { 
+                infinitive: "πηγαίνω (to go)", 
+                conjugations: { 
+                    present: { 
+                        "1st Singular": "πηγαίνω", 
+                        "2nd Singular": "πηγαίνεις", 
+                        "3rd Singular": "πηγαίνει", 
+                        "1st Plural": "πηγαίνουμε", 
+                        "2nd Plural": "πηγαίνετε", 
+                        "3rd Plural": "πηγαίνουν" 
+                    }, 
+                    past: { 
+                        "1st Singular": "πήγα", 
+                        "2nd Singular": "πήγες", 
+                        "3rd Singular": "πήγε", 
+                        "1st Plural": "πήγαμε", 
+                        "2nd Plural": "πήγατε", 
+                        "3rd Plural": "πήγαν" 
+                    }, 
+                    future: { 
+                        "1st Singular": "θα πάω", 
+                        "2nd Singular": "θα πας", 
+                        "3rd Singular": "θα πάει", 
+                        "1st Plural": "θα πάμε", 
+                        "2nd Plural": "θα πάτε", 
+                        "3rd Plural": "θα πάνε" 
+                    } 
+                } 
+            },
+            { 
+                infinitive: "κάνω (to do/make)", 
+                conjugations: { 
+                    present: { 
+                        "1st Singular": "κάνω", 
+                        "2nd Singular": "κάνεις", 
+                        "3rd Singular": "κάνει", 
+                        "1st Plural": "κάνουμε", 
+                        "2nd Plural": "κάνετε", 
+                        "3rd Plural": "κάνουν" 
+                    }, 
+                    past: { 
+                        "1st Singular": "έκανα", 
+                        "2nd Singular": "έκανες", 
+                        "3rd Singular": "έκανε", 
+                        "1st Plural": "κάναμε", 
+                        "2nd Plural": "κάνατε", 
+                        "3rd Plural": "έκαναν" 
+                    }, 
+                    future: { 
+                        "1st Singular": "θα κάνω", 
+                        "2nd Singular": "θα κάνεις", 
+                        "3rd Singular": "θα κάνει", 
+                        "1st Plural": "θα κάνουμε", 
+                        "2nd Plural": "θα κάνετε", 
+                        "3rd Plural": "θα κάνουν" 
+                    } 
+                } 
+            },
+            { 
+                infinitive: "γράφω (to write)", 
+                conjugations: { 
+                    present: { 
+                        "1st Singular": "γράφω", 
+                        "2nd Singular": "γράφεις", 
+                        "3rd Singular": "γράφει", 
+                        "1st Plural": "γράφουμε", 
+                        "2nd Plural": "γράφετε", 
+                        "3rd Plural": "γράφουν" 
+                    }, 
+                    past: { 
+                        "1st Singular": "έγραψα", 
+                        "2nd Singular": "έγραψες", 
+                        "3rd Singular": "έγραψε", 
+                        "1st Plural": "γράψαμε", 
+                        "2nd Plural": "γράψατε", 
+                        "3rd Plural": "έγραψαν" 
+                    }, 
+                    future: { 
+                        "1st Singular": "θα γράψω", 
+                        "2nd Singular": "θα γράψεις", 
+                        "3rd Singular": "θα γράψει", 
+                        "1st Plural": "θα γράψουμε", 
+                        "2nd Plural": "θα γράψετε", 
+                        "3rd Plural": "θα γράψουν" 
+                    } 
+                } 
+            },
+            { 
+                infinitive: "δίνω (to give)", 
+                conjugations: { 
+                    present: { 
+                        "1st Singular": "δίνω", 
+                        "2nd Singular": "δίνεις", 
+                        "3rd Singular": "δίνει", 
+                        "1st Plural": "δίνουμε", 
+                        "2nd Plural": "δίνετε", 
+                        "3rd Plural": "δίνουν" 
+                    }, 
+                    past: { 
+                        "1st Singular": "έδωσα", 
+                        "2nd Singular": "έδωσες", 
+                        "3rd Singular": "έδωσε", 
+                        "1st Plural": "δώσαμε", 
+                        "2nd Plural": "δώσατε", 
+                        "3rd Plural": "έδωσαν" 
+                    }, 
+                    future: { 
+                        "1st Singular": "θα δώσω", 
+                        "2nd Singular": "θα δώσεις", 
+                        "3rd Singular": "θα δώσει", 
+                        "1st Plural": "θα δώσουμε", 
+                        "2nd Plural": "θα δώσετε", 
+                        "3rd Plural": "θα δώσουν" 
+                    } 
+                } 
+            }
+        ];
 
-        const tenses = ["present", "imperfect", "aorist", "futureSimple", "imperative"];
-        const persons = ["1st Singular", "2nd Singular", "3rd Singular", "1st Plural", "2nd Plural", "3rd Plural"];
+        let score = 0;
+        let currentVerb;
+        let currentTense;
+        let currentPerson;
+        let correctAnswer;
 
-        let currentVerb, currentTense, currentPerson, correctAnswer, correctCount = 0;
+        function getRandomElement(arr) {
+            return arr[Math.floor(Math.random() * arr.length)];
+        }
 
         function generateNewQuestion() {
-            currentVerb = greekVerbs[Math.floor(Math.random() * greekVerbs.length)];
-            currentTense = tenses[Math.floor(Math.random() * tenses.length)];
-            
-            if (currentTense === "imperative") {
-                currentPerson = ["2nd Singular", "3rd Singular", "2nd Plural", "3rd Plural"][Math.floor(Math.random() * 4)];
-            } else {
-                currentPerson = persons[Math.floor(Math.random() * persons.length)];
-            }
-
+            currentVerb = getRandomElement(greekVerbs);
+            currentTense = getRandomElement(Object.keys(currentVerb.conjugations));
+            currentPerson = getRandomElement(Object.keys(currentVerb.conjugations[currentTense]));
             correctAnswer = currentVerb.conjugations[currentTense][currentPerson];
 
-            if (!correctAnswer) {
-                generateNewQuestion();
-                return;
-            }
-
             document.getElementById('verb').textContent = `Verb: ${currentVerb.infinitive}`;
-            document.getElementById('tense').textContent = `Tense: ${formatTense(currentTense)}`;
+            document.getElementById('tense').textContent = `Tense: ${currentTense}`;
             document.getElementById('person').textContent = `Person: ${currentPerson}`;
-            document.getElementById('feedback').textContent = '';
+            document.getElementById('score').textContent = `Correct Answers: ${score}`;
+            document.getElementById('feedback').textContent = ''; // Reset feedback text
 
             generateOptions();
         }
 
-        function formatTense(tense) {
-            switch(tense) {
-                case "futureSimple": return "Future Simple";
-                default: return tense.charAt(0).toUpperCase() + tense.slice(1);
-            }
-        }
-
         function generateOptions() {
-            const options = [correctAnswer];
-            while (options.length < 6) {
-                const randomVerb = greekVerbs[Math.floor(Math.random() * greekVerbs.length)];
-                const randomTense = tenses[Math.floor(Math.random() * tenses.length)];
-                const randomPerson = randomTense === "imperative" 
-                    ? ["2nd Singular", "3rd Singular", "2nd Plural", "3rd Plural"][Math.floor(Math.random() * 4)]
-                    : persons[Math.floor(Math.random() * persons.length)];
-                const option = randomVerb.conjugations[randomTense][randomPerson];
-                if (option && !options.includes(option)) {
-                    options.push(option);
-                }
-            }
-
-            const shuffledOptions = options.sort(() => 0.5 - Math.random());
             const optionsContainer = document.getElementById('options');
             optionsContainer.innerHTML = '';
-            shuffledOptions.forEach(option => {
+            let options = [correctAnswer];
+            while (options.length < 6) {
+                let randomVerb = getRandomElement(greekVerbs);
+                let randomTense = getRandomElement(Object.keys(randomVerb.conjugations));
+                let randomPerson = getRandomElement(Object.keys(randomVerb.conjugations[randomTense]));
+                let randomAnswer = randomVerb.conjugations[randomTense][randomPerson];
+                if (!options.includes(randomAnswer)) {
+                    options.push(randomAnswer);
+                }
+            }
+            options = options.sort(() => Math.random() - 0.5);
+            options.forEach(option => {
                 const button = document.createElement('button');
+                button.classList.add('option');
                 button.textContent = option;
-                button.className = 'option';
                 button.onclick = () => checkAnswer(option);
                 optionsContainer.appendChild(button);
             });
@@ -530,30 +302,19 @@
         function checkAnswer(answer) {
             const feedback = document.getElementById('feedback');
             if (answer === correctAnswer) {
+                score++;
                 feedback.textContent = 'Correct!';
-                feedback.className = 'feedback correct';
-                correctCount++;
+                feedback.classList.add('correct');
+                feedback.classList.remove('incorrect');
             } else {
-                feedback.textContent = `Incorrect. The correct answer is: ${correctAnswer}`;
-                feedback.className = 'feedback incorrect';
+                feedback.textContent = 'Incorrect!';
+                feedback.classList.add('incorrect');
+                feedback.classList.remove('correct');
             }
-            document.getElementById('score').textContent = `Correct Answers: ${correctCount}`;
-            disableOptions();
+            document.getElementById('score').textContent = `Correct Answers: ${score}`;
         }
 
-        function disableOptions() {
-            const options = document.querySelectorAll('.option');
-            options.forEach(option => {
-                option.disabled = true;
-                if (option.textContent === correctAnswer) {
-                    option.style.backgroundColor = 'green';
-                } else if (option.style.backgroundColor !== 'green') {
-                    option.style.backgroundColor = 'red';
-                }
-            });
-        }
-
-        window.onload = generateNewQuestion;
+        generateNewQuestion();
     </script>
 </body>
 </html>
